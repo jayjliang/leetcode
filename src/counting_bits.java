@@ -4,7 +4,7 @@
 public class counting_bits {
     public static void main(String[] args){
         counting_bits bits = new counting_bits();
-        bits.countBits(31);
+        System.out.println(bits.countBits(31).length);
     }
     public int[] countBits(int num) {
         int[] dp = new int[num+1];
