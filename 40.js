@@ -48,6 +48,7 @@ function backtrace(candidates, target, current, index, visited, result, cache) {
     }
     console.log(current);
     for (let i = index; i < candidates.length; i++) {
+        // 这个条件是核心，我只选和我自己不同的，可以和90题的条件对比一下
         if (i != index && candidates[i] == candidates[index]) {
             continue;
         }
