@@ -23,5 +23,31 @@
  * @return {number}
  */
 var minFallingPathSum = function(A) {
-    
+    let dp = [];
+    let len = A.length;
+    for(let i = 0; i < len; i++) {
+        dp[i] = [];
+    }
+    for(let i = 0; i < len; i++) {
+        for(let j = 0; j < A[i].length; j++) {
+            if (i >= 1) {
+                let min = dp[i-1][j];
+                if (j>=1) {
+                    min = Math.min(min, dp[i-1][j-1]);
+                }
+                if (j < A[i].length - 1) {
+                    min = Math.min(min,  dp[i-1][j+1]);
+                }
+                dp[i][j] = min + A[i][j];
+            } else {
+                dp[i][j] = A[i][j];
+            }
+        }
+    }
+    let min = Infinity;
+    for(let i = 0;i < dp[len-1].length; i++) {
+        min = Math.min(min, dp[len-1][i])
+    }
+    return min;
 };
+console.log(minFallingPathSum([[1,2,3],[4,5,6],[7,8,9]]))
