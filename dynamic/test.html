@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            position: relative;
+
+        }
+
+        .container {
+            height: 100%;
+            overflow-y: scroll;
+        }
+
+        .head {
+            height: 50px;
+            /* position: fixed;
+            left: 0;
+            top: 0;
+            right: 0; */
+        }
+        .red {
+            background-color: brown;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .content {
+            height: 10000px;
+            background-color: antiquewhite;
+        }
+
+        
+    
+    </style>
+</head>
+<body>
+    <div class="head red" id="head"> </div>
+    <div class="container" id="container">
+        <div  class="content"> </div>
+    </div>
+</body>
+<script>
+    var conatiner = document.getElementById("container");
+    var head = document.getElementById("head");
+    document.getElementById("container").addEventListener('scroll', function (event) {
+        if (conatiner.scrollTop > 70) {
+            head.classList.remove('red');
+            head.classList.add('blue');
+        }
+    })
+</script>
+</html>
