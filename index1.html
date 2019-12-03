@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+        }
+        .resume {
+            width: 210.0mm;
+            margin: 0 auto;
+            border-width: 0;
+            background: #fff;
+            position: relative;
+            border-color: #e0e0e0;
+            background-color: #fff;
+            overflow: hidden;
+            text-decoration: none;
+            font-size: 10.5pt;
+            line-height: 1.15;
+            font-family: monospace;
+        }
+
+        .inner {
+            margin: 20.0mm 20.0mm 5.0mm;
+        }
+
+        .name {
+            text-align: center;
+            font-size: 22pt;
+            font-weight: bold;
+            line-height: 1.15;
+        }
+
+        .contact {
+            justify-content: center;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .grow div {
+            flex-grow: 1;
+        }
+        .contact div {
+            flex-grow: 1;
+            text-align: center;
+            margin: 1em 0 0;
+        }
+
+        .space {
+            height: 11px;
+        }
+
+        .border-bottom {
+            border-bottom: 0.75pt solid #000000;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 12pt;
+            justify-content: flex-start;
+            margin-top: 5mm;
+            margin-bottom: 9pt;
+        }
+        
+        .title .left {
+            width: 15%;
+        }
+
+        .content {
+            padding-left: 15%;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container resume">
+        <div class="inner">
+            <div class="name">梁界</div>
+            <div class="flex contact">
+                <div>电话：(+86) 139-2658-9031</div>
+                <div>邮箱：1948448114@qq.com</div>
+            </div>
+            <div class="space"></div>
+            <div class="flex title border-bottom">
+                <div class="left">目标工作</div>
+                <div>前端开发工程师</div>
+            </div>
+
+            <div class="flex title border-bottom">
+                <div class="left">过往经历</div>
+            </div>
+            <div class="flex content bold grow">
+                <div>东南大学</div>
+                <div>软件工程</div>
+                <div>本科</div>
+                <div>2013-2017</div>
+            </div>
+            <div class="flex content bold grow">
+                <div>腾讯</div>
+                <div>前端开发</div>
+                <div>高级工程师</div>
+                <div>2017-至今</div>
+            </div>
+
+            <div class="flex title border-bottom">
+                <div class="left">专业技能</div>
+            </div>
+
+            <div class="flex title border-bottom">
+                <div class="left">工作经历</div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
