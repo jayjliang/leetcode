@@ -38,5 +38,51 @@ A，B，C的价格分别为¥2，¥3，¥4.
  * @return {number}
  */
 var shoppingOffers = function(price, special, needs) {
-    
+    let current = {
+        current: 0,
+        min: Infinity
+    };
+    backtrace(price, special, needs, current);
+    return current.min;
 };
+
+var backtrace = function(price, special, needs, current) {
+    let complete = true;
+    for(let i = 0; i < needs.length; i++) {
+        if (needs[i] < 0) {
+            return;
+        } else if (needs[i] > 0) {
+            complete = false;
+        }
+    }
+    if (complete) {
+        current.min = Math.min(current.min, current.current);
+        return;
+    } else {
+        let sum = 0;
+        for (let k = 0;k < needs.length; k++) {
+            sum += needs[k] * price[k];
+        }
+        current.min = Math.min(current.min, current.current + sum);
+    }
+
+    for(let i =0; i < special.length; i++) {
+        // console.log(needs,i, current);
+        let sp = special[i];
+        // console.log(sp);
+        for(let j = 0; j < needs.length; j++) {
+            needs[j] -= sp[j];
+        }
+        current.current += sp[sp.length - 1];
+        // console.log(needs, i, current);
+        backtrace(price, special, needs, current);
+        current.current -= sp[sp.length - 1];
+        for(let j = 0; j < needs.length; j++) {
+            needs[j] += sp[j];
+        }
+        // console.log(needs, i, current);
+    }
+    
+}
+
+console.log(shoppingOffers([2,5], [[3,0,5],[1,2,10]], [3,2]))
