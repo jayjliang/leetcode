@@ -45,7 +45,7 @@ var longestPalindrome = function(s) {
             
         }
     }
-    console.log(dp);
+    // console.log(dp);
     return s.slice(realStart, realEnd + 1);
 };
 
